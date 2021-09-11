@@ -66,3 +66,4 @@ select name from student where math>70 AND sci>70 AND eng>70 AND social>70 AND s
 select count(name) from student where rollno>0 AND rollno<21;
 select count(name) from student where rollno>20 AND rollno<41;
 select count(name) from student where rollno>40 AND rollno<61;
+
