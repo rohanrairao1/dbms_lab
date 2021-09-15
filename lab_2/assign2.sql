@@ -66,10 +66,12 @@ SELECT * FROM Student WHERE math > @x ;
 SELECT COUNT(*) AS Number_of_Students FROM Student WHERE math > @x ;
 
 #4
-SELECT sum(case when pincode like '5%' or pincode like '6%' then cap else 0 end)/sum(case when pincode like '3%' or pincode like '4%' then cap else 0 end) as ratio_of_stemtonostem FROM Campus;
+SELECT sum(case when pincode LIKE '5%' OR pincode LIKE '6%' then cap else 0 end)/sum(case when pincode LIKE '3%' OR pincode LIKE '4%' then cap else 0 end) AS ratio_of_stemtonostem FROM Campus;
 
 #5
-select *,(math+sci+eng+social+sports)/5 from  Student order by (math+sci+eng+social+sports)/5 desc limit 1,1;
+SELECT *,(math+sci+eng+social+sports)/5 FROM Student ORDER BY (math+sci+eng+social+sports)/5 desc limit 1,1;
 
 #6
-select name,rollno,(math+sci+eng+social+sports)/5 as avg_marks,(case when (math+sci+eng+social+sports)/5>@x then 'HIGH' else 'LOW' end)  AS score_status from Student;
+SELECT name,rollno,(math+sci+eng+social+sports)/5 AS avg_marks,(case when (math+sci+eng+social+sports)/5>@x then 'HIGH' else 'LOW' end) AS score_status FROM Student;
+
+
